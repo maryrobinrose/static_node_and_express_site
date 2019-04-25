@@ -4,8 +4,11 @@ html(lang="en")
     title Landing Page
   body
     header
-      h1 Hello
+      h1 Hello, I'm #{name}
     section#content
+      ul
+        each color in colors
+          li=color
       h2 Welcome
     footer
       p A portfolio*/

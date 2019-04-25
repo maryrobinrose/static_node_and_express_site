@@ -2,6 +2,15 @@ const express = require('express');
 
 const app = express();
 
+const colors = [
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'blue',
+  'purple'
+];
+
 //Define settings in Express, pug tells Express which template engine to use
 app.set('view engine', 'pug');
 
@@ -15,7 +24,7 @@ app.get('/', (req, res) => {
 //Route 2
 app.get('/', (req, res) => {
     //Sends string to client
-    res.send('Hello Again');
+    res.send('Hello Again', {colors});
 });
 
 app.listen(3000, () => {
