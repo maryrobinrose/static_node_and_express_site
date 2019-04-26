@@ -12,6 +12,7 @@ App logs out a user friendly error message to the console when the app is pointe
 const express = require('express');
 const app = express();
 const router = express.Router();
+const {data} = require('projectData.json');
 
 const colors = [
   'red',
