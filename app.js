@@ -1,13 +1,6 @@
 /*Initialize the app and add dependencies
-
--The node_modules folder is in the downloaded repo and/or isn't referenced in the .gitignore file.
--Running npm install doesn't install necessary dependencies.
--Running node app.js doesn't serve the app.
--The node_modules folder is referenced in the .gitignore file and isn't in the repo.
--Running npm install downloads all necessary dependencies.
--Running node app.js serves the app.
--Running npm start serves the app.*/
-
+-->Running node app.js serves the app.
+-->Running npm start serves the app.*/
 
 /*The following routes do render the appropriate pages:
 / - Home page
@@ -18,7 +11,6 @@ App uses a static route to serve the static files in the public folder
 App logs out a user friendly error message to the console when the app is pointed at a non-existent route such as /error/error.
 */
 
-//-->Should my routes be in their own file?
 
 const express = require('express');
 const app = express();
