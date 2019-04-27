@@ -1,56 +1,55 @@
-const colors = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple'
-];
 
-Snippets
-Here's the JSON data used in the video
-
-//Project Name
-//github repo link
+-->>Create github pages for live links for each project
+-->>Create images
 
 {
-    "data": {
-        "title": "JavaScript Flashcards",
-        "cards": [
-            {
-                "question": "What language are Express apps written in?",
-                "hint": "It starts with a \"J\"",
-                "answer": "JavaScript"
-            },
-            {
-                "question": "What is one way a website can store data in a user's browser?",
-                "hint": "They are delicious with milk",
-                "answer": "Cookies"
-            },
-            {
-                "question": "What is a common way to shorten the response object's name inside middleware?",
-                "hint": "It has the same abbreviation as \"resolution\"",
-                "answer": "res"
-            },
-            {
-                "question": "How many different values can booleans have?",
-                "hint": "Think: binary",
-                "answer": "2"
-            },
-            {
-                "question": "Which HTML element can contain JavaScript?",
-                "hint": "It starts with an \"s\"",
-                "answer": "<script>"
-            }
-        ]
+    "projects": {
+        "id": 0,
+        "project_name": "Random Quote Generator",
+        "description": "An app that displays different quotes when a button is clicked.",
+        "technologies": "JavaScript",
+        "live_link": "https://maryrobinrose.github.io/random-quote-generator",
+        "github_link": "https://github.com/maryrobinrose/random-quote-generator.git" ,
+        "image_urls":
+    }
+
+    {
+        "id": 1,
+        "project_name": "List Pagination and Filtering" ,
+        "description": "Progressively enhances webpage to create multiple pages of a list.",
+        "technologies": "JavaScript",
+        "live_link": "https://maryrobinrose.github.io/list_pagination_and_filtering",
+        "github_link": "https://github.com/maryrobinrose/list_pagination_and_filtering.git",
+        "image_urls":
+    }
+
+    {
+        "id": 2,
+        "project_name": "Interactive Form" ,
+        "description": "An interactive form using jQuery.",
+        "technologies": "JavaScript, jQuery",
+        "live_link": "https://maryrobinrose.github.io/interactive-form",
+        "github_link": "https://github.com/maryrobinrose/interactive-form.git",
+        "image_urls":
+    }
+
+    {
+        "id": 3,
+        "project_name": "OOP Game Show App",
+        "description": "A game show app using Object Oriented programming.",
+        "technologies":"JavaScript" ,
+        "live_link": "https://maryrobinrose.github.io/OOP-Game-Show-App",
+        "github_link": "https://github.com/maryrobinrose/OOP-Game-Show-App.git",
+        "image_urls":
+    }
+
+    {
+        "id": 4,
+        "project_name": "Public API Request",
+        "description": "Uses the Random User Generator API to build a prototype for an employee directory",
+        "technologies": "JavaScript, jQuery",
+        "live_link": "https://maryrobinrose.github.io/public_api_request",
+        "github_link": "https://github.com/maryrobinrose/public_api_request.git",
+        "image_urls":
     }
 }
-
-The data.json file contains a projects property set to an array containing at least five objects that each contain the following properties:
-id
-project_name
-description
-technologies
-live_link
-github_link
-image_urls
