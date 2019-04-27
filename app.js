@@ -1,14 +1,16 @@
 /*Initialize the app and add dependencies
 -->Running node app.js serves the app.
--->Running npm start serves the app.*/
+-->Running npm start serves the app.
 
-/*The following routes do render the appropriate pages:
-/ - Home page
-/about - About page
-/project or /projects route that includes a project id parameter
-App uses a static route to serve the static files in the public folder
+The following routes do render the appropriate pages:
+-->> / - Home page
+-->> /about - About page
+-->> /project or /projects route that includes a project id parameter
+-->> App uses a static route to serve the static files in the public folder
 
-App logs out a user friendly error message to the console when the app is pointed at a non-existent route such as /error/error.
+Errors
+-->>App logs out a user friendly error message to the console when the app is pointed at a non-existent route such as /error/error.
+
 */
 
 
@@ -24,14 +26,7 @@ app.use(bodyParse.urlencoded({extended: false}));
 
 app.use('/', routes);
 
-const colors = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple'
-];
+
 
 //Define settings in Express, pug tells Express which template engine to use
 app.set('view engine', 'pug');
