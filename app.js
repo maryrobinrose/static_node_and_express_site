@@ -1,3 +1,14 @@
+/*Initialize the app and add dependencies
+
+-The node_modules folder is in the downloaded repo and/or isn't referenced in the .gitignore file.
+-Running npm install doesn't install necessary dependencies.
+-Running node app.js doesn't serve the app.
+-The node_modules folder is referenced in the .gitignore file and isn't in the repo.
+-Running npm install downloads all necessary dependencies.
+-Running node app.js serves the app.
+-Running npm start serves the app.*/
+
+
 /*The following routes do render the appropriate pages:
 / - Home page
 /about - About page
@@ -13,6 +24,13 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const {data} = require('projectData.json');
+
+//connect to public folder
+app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParse.urlencoded({extended: false}));
+
+app.use('/', routes);
 
 const colors = [
   'red',
@@ -52,6 +70,13 @@ app.get('/hello', (req, res) => {
     res.render('hello');
 });
 
+//connect to projects
+app.get('/', (req, res) => {
+  const numberOfProjects = projects.length;
+  const project = Math.floor( Math.random() * numberOfProjects);
+  res.redirect(`/projectData/${project}?side=project`)
+});
+
 //Connect to hello.pug, returns
 app.post('/hello', (req, res) => {
     //Sends string to client
@@ -63,6 +88,15 @@ app.post('/hello', (req, res) => {
   // do something
   next();
 }
+
+//connect to project data?
+router.get('/:id', (req, res) => {
+  const {side} = req.query;
+  const {id} = req.params;
+  res.render('card', {
+
+  });
+});
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -76,6 +110,8 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+
+module.exports = router;
 
 app.listen(3000, () => {
   console.log('The server is running');

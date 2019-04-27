@@ -10,6 +10,9 @@ const colors = [
 Snippets
 Here's the JSON data used in the video
 
+//Project Name
+//github repo link
+
 {
     "data": {
         "title": "JavaScript Flashcards",
