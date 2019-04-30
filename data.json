@@ -1,15 +1,10 @@
 /*
 
--->>technologies - an array of strings containing a list of the technologies used in the project
--->>live_link - link to the live version of the project, which can be hosted for free on GitHub pages. Check the project resources list for a helpful reference link.
--->>github_link - link to the GitHub repo
 -->>image_urls - an array of strings containing file paths from the views folder to the images themselves. You'll need a main image to be shown on the landing page, and three images to be shown on the project page.
 
 */
 
 
--->>Create github pages for live links for each project
--->>Create images
 
 {
     "projects": {
@@ -19,7 +14,7 @@
         "technologies": ["JavaScript"],
         "live_link": "https://maryrobinrose.github.io/random-quote-generator",
         "github_link": "https://github.com/maryrobinrose/random-quote-generator.git",
-        "image_urls":
+        "image_urls": ["img/project1_img1", "img/project1_img2"]
     }
 
     {
@@ -29,7 +24,7 @@
         "technologies": ["JavaScript"],
         "live_link": "https://maryrobinrose.github.io/list_pagination_and_filtering",
         "github_link": "https://github.com/maryrobinrose/list_pagination_and_filtering.git",
-        "image_urls":
+        "image_urls": ["img/project2_img1", "img/project2_img2"]
     }
 
     {
@@ -39,7 +34,7 @@
         "technologies": ["JavaScript", "jQuery"],
         "live_link": "https://maryrobinrose.github.io/interactive-form",
         "github_link": "https://github.com/maryrobinrose/interactive-form.git",
-        "image_urls":
+        "image_urls": ["img/project3_img1", "img/project3_img2"]
     }
 
     {
@@ -49,7 +44,7 @@
         "technologies":["JavaScript"],
         "live_link": "https://maryrobinrose.github.io/OOP-Game-Show-App",
         "github_link": "https://github.com/maryrobinrose/OOP-Game-Show-App.git",
-        "image_urls":
+        "image_urls": ["img/project4_img1", "img/project4_img2"]
     }
 
     {
@@ -59,6 +54,6 @@
         "technologies": ["JavaScript", "jQuery"],
         "live_link": "https://maryrobinrose.github.io/public_api_request",
         "github_link": "https://github.com/maryrobinrose/public_api_request.git",
-        "image_urls":
+        "image_urls": ["img/project5_img1", "img/project5_img2"]
     }
 }
