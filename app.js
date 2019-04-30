@@ -1,18 +1,49 @@
-/*
+//Variables to require the necessary dependencies
+const express = require('express');
+const app = express();
+//Link to project data
+const { data } = require('./data.json');
 
-Add variables to require the necessary dependencies. You'll need to require:
+//Define settings in Express, pug tells Express which template engine to use
+app.set('view engine', 'pug');
 
--->>Your data.json file
+//Serve the static files located in the public folder
+app.use(express.static('public'));
 
-Set up your middleware:
--->>set your “view engine” to “pug”
--->>use a static route and the express.static method to serve the static files located in the public folder
+//Render the "Home" page with the locals set to data.projects
+app.get('/', (req, res) => {
+    //Sends string to client
+    res.render('index', { data });
+});
 
-Set your routes. You'll need:
--->>An "index" route (/) to render the "Home" page with the locals set to data.projects
--->>An "about" route (/about) to render the "About" page
--->>Dynamic "project" routes (/project or /projects) based on the id of the project that render a customized version of the Pug project template to show off each project. Which means adding data, or "locals", as an object that contains data to be passed to the Pug template.
--->>Finally, start your server. Your app should listen on port 3000, and log a string to the console that says which port the app is listening to.
+//Render the "About" page
+app.get('/', (req, res) => {
+    //Sends string to client
+    res.render('about');
+});
+
+//-->>Dynamic "project" routes (/project or /projects) based on the id of the project that render a customized version of the Pug project template to show off each project. Which means adding data, or "locals", as an object that contains data to be passed to the Pug template.
+router.get('/:id', (req, res) => {
+  const {side} = req.query;
+  const { id } = req.params;
+  res.render('card', {
+  });
+});
+
+//Start the server
+app.listen(3000, () => {
+  console.log('The server is running on port 3000.');
+});
+
+
+
+/*TO DO
+
+Handle errors
+-->>If a user navigates to a non-existent route, or if a request for a resource fails for whatever reason, your app should handle the error in a user friendly way.
+-->>Add an error handler to app.js that sets the error message to a user friendly message, and sets the status code.
+-->>Log out a user friendly message to the console when the app is pointed at a URL that doesn't exist as a route in the app, such as /error/error.
+-->>Refer to the video on Error handling Middleware, which is linked in the project resources list.
 
 */
 
@@ -32,22 +63,15 @@ Errors
 */
 
 
-const express = require('express');
-const app = express();
-const router = express.Router();
-const {data} = require('projectData.json');
-
-//connect to public folder
-app.use(express.static('public'));
-app.use(bodyParser.json());
-app.use(bodyParse.urlencoded({extended: false}));
-
-app.use('/', routes);
+/*NOTES FROM UNIT VIDEOS
+//const router = express.Router();
+//app.use(bodyParser.json());
+//app.use(bodyParse.urlencoded({extended: false}));
 
 
+//app.use('/', data.projects);
 
-//Define settings in Express, pug tells Express which template engine to use
-app.set('view engine', 'pug');
+
 
 //Middleware
 app.use((req, res, next) => {
@@ -94,14 +118,6 @@ app.post('/hello', (req, res) => {
   next();
 }
 
-//connect to project data?
-router.get('/:id', (req, res) => {
-  const {side} = req.query;
-  const {id} = req.params;
-  res.render('card', {
-
-  });
-});
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -118,6 +134,5 @@ app.use((err, req, res, next) => {
 
 module.exports = router;
 
-app.listen(3000, () => {
-  console.log('The server is running');
-});
+
+*/
