@@ -1,19 +1,3 @@
-/*doctype html
-html(lang="en")
-  head
-    title Landing Page
-  body
-    header
-      h1 Hello, I'm #{name}
-    section#content
-      ul
-        each color in colors
-          li=color
-      h2 Welcome
-    footer
-      p A portfolio*/
-
-
 extends layout.pug
 
 block content
@@ -21,22 +5,24 @@ block content
     div
 
       //- Add a title or heading like My Portfolio, or Hey, Potential Employers, or Let's make the web great together!
-      h1 Heading
+      h1 My Portfolio
 
       //- Add a description for your portfolio, what this project is, it's purpose, what it's suppossed to accomplish, etc.
       p.lead.text-light
-        | Portfolio Description
+        | This is my JavaScript Portfolio
   article.grid-container.portfolio-index
 
     .grid-x.grid-margin-x.small-up-2.medium-up-2.large-up-3
 
       //- Use the Pug `each` iterator to create a projet img, title and link in the markup for each of the projects you are showcasing.
 
+      each project in projects
+
       //- Use a combination of interpolation and template literals as needed to dynamically generate the the routes in the href, as well as the img's src and the projects title.
 
       //- Here's what the Pug for each project example should look like.
 
       .cell
-        a(href='#')
-          img.thumbnail(src='https://placehold.it/550x550')
-          h5 Title
+        a(href=`/projects/${project.id}`)
+          img.thumbnail(src=`/img/${project.image_urls[0]}`)
+          h5 `${project.project_name}`
