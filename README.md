@@ -11,7 +11,9 @@ _This project uses JavaScript, JSON, Node.js, Pug, and Express to create a portf
 ## Setup And Installation
 
 * Clone the project to a local directory
-* Open index.html in a browser
+* Run npm install
+* Run node app.js
+* Load http://localhost:3000/ in a browser
 
 ## Known Bugs
 
