@@ -25,7 +25,8 @@ app.get('/about', (req, res) => {
 //Render Pug project template
 router.get('/:id', (req, res) => {
   const { id } = req.params;
-  res.render('project', { projects[id] });
+  const project = projects[id];
+  res.render('project', { project });
 });
 
 
