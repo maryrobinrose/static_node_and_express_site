@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //Link to project data
-const { projects } = require('./data.json');
+const projects = require('./data.json');
 
 //Define settings in Express, pug tells Express which template engine to use
 app.set('view engine', 'pug');
@@ -23,7 +23,7 @@ app.get('/about', (req, res) => {
 });
 
 //Render Pug project template
-router.get('/:id', (req, res) => {
+app.use('/project/:id', (req, res) => {
   const { id } = req.params;
   const project = projects[id];
   res.render('project', { project });
