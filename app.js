@@ -1,8 +1,10 @@
 //Variables to require the necessary dependencies
 const express = require('express');
 const app = express();
-//Link to project data
-const projects = require('./data.json');
+//Connect to JSON
+const data = require('./data.json');
+//Grab project info
+const projects = data.projects;
 
 //Define settings in Express, pug tells Express which template engine to use
 app.set('view engine', 'pug');
