@@ -37,7 +37,7 @@ app.use((req, res, next) => {
   console.log('Page cannot be found.');
 });
 
-//
+//Error handling middleware
 app.use((err, req, res, next) => {
   res.locals.error = err;
   res.status(err.status);
@@ -52,20 +52,7 @@ app.listen(3000, () => {
 });
 
 
-/*Initialize the app and add dependencies
--->Running node app.js serves the app.
--->Running npm start serves the app.
 
-The following routes do render the appropriate pages:
--->> / - Home page
--->> /about - About page
--->> /project or /projects route that includes a project id parameter
--->> App uses a static route to serve the static files in the public folder
-
-Errors
--->>App logs out a user friendly error message to the console when the app is pointed at a non-existent route such as /error/error.
-
-*/
 
 
 /*NOTES FROM UNIT VIDEOS
