@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 //Link to project data
-const { data } = require('./data.json');
+const { projects } = require('./data.json');
 
 //Define settings in Express, pug tells Express which template engine to use
 app.set('view engine', 'pug');
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 //Render the "Home" page with the locals set to data.projects
 app.get('/', (req, res) => {
     //Sends string to client
-    res.render('index', { data });
+    res.render('index', { projects });
 });
 
 //Render the "About" page
