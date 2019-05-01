@@ -22,28 +22,35 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-//Render Pug project template 
+//Render Pug project template
 router.get('/:id', (req, res) => {
   const { id } = req.params;
   res.render('project', { projects[id] });
 });
+
+
+//Error handler for non-existant route
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+  console.log('Page cannot be found.');
+});
+
+//
+app.use((err, req, res, next) => {
+  res.locals.error = err;
+  res.status(err.status);
+  //Render template back to client
+  res.render('error');
+});
+
 
 //Start the server
 app.listen(3000, () => {
   console.log('The server is running on port 3000.');
 });
 
-
-
-/*TO DO
-
-Handle errors
--->>If a user navigates to a non-existent route, or if a request for a resource fails for whatever reason, your app should handle the error in a user friendly way.
--->>Add an error handler to app.js that sets the error message to a user friendly message, and sets the status code.
--->>Log out a user friendly message to the console when the app is pointed at a URL that doesn't exist as a route in the app, such as /error/error.
--->>Refer to the video on Error handling Middleware, which is linked in the project resources list.
-
-*/
 
 /*Initialize the app and add dependencies
 -->Running node app.js serves the app.
@@ -117,17 +124,7 @@ app.post('/hello', (req, res) => {
 }
 
 
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404'
-  next(err);
-});
 
-app.use((err, req, res, next) => {
-  res.locals.error = err;
-  res.status(err.status);
-  res.render('error');
-});
 
 
 module.exports = router;
