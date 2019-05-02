@@ -16,8 +16,8 @@ block content
         h6 Technologies
 
         ul
-        each value in projects[id].technologies
-            li= value
+        each val in projects.technologies
+            li= val
 
 
         a.button.expanded(href=`${projects[id].live_link}` target="_blank") Live Demo
