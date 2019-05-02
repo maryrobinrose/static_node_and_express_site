@@ -31,9 +31,6 @@ app.use('/project/:id', (req, res) => {
   res.render('project', { project });
 });
 
-//App uses a static route to serve the static files in the public folder
-
-
 //Error handler for non-existant route
 app.use((req, res, next) => {
   const err = new Error('Not Found');
