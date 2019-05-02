@@ -7,17 +7,16 @@ block content
     .grid-x
       .cell.small-6.medium-9.large-9
 
-        h1 #{project_name}
+        h1 #{projects[id].project_name}
 
         p.lead.text-light
-          | #{description}
+          | #{projects[id].description}
 
       .cell.portfolio-meta.small-6.medium-2.large-3
         h6 Technologies
 
-
         ul
-          each value in technologies
+        each value in projects[id].technologies
             li= value
 
 
