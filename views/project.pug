@@ -20,9 +20,9 @@ block content
             li= val
 
 
-        a.button.expanded(href=`${projects[id].live_link}` target="_blank") Live Demo
-        a.button.expanded(href=`${projects[id].github_link}` target="_blank") GitHub Repo
+        a.button.expanded(href=`${projects.live_link}` target="_blank") Live Demo
+        a.button.expanded(href=`${projects.github_link}` target="_blank") GitHub Repo
 
-    img.image(src=`/static/img/${project.image_urls[0]}`)
-    img.image(src=`/static/img/${project.image_urls[1]}`)
-    img.image(src=`/static/img/${project.image_urls[2]}`)
+    img.image(src=`/static/img/${projects.image_urls[0]}`)
+    img.image(src=`/static/img/${projects.image_urls[1]}`)
+    img.image(src=`/static/img/${projects.image_urls[2]}`)
