@@ -10,7 +10,7 @@ const projects = data.projects;
 app.set('view engine', 'pug');
 
 //Serve the static files located in the public folder
-app.use(express.static('public'));
+app.use('/static', express.static('public'));
 
 //Render the "Home" page with the locals set to data.projects
 app.get('/', (req, res) => {
