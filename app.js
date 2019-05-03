@@ -28,8 +28,13 @@ app.get('/about', (req, res) => {
 app.get('/projects/:id', (req, res) => {
   const {id} = req.params;
   const project = projects[id];
+  if (isNaN(id) || id > projects.length) {
+    return res.redirect('/project');
+  }
   res.render('project', { project });
 });
+
+
 
 //Error handler for non-existant route
 app.use((req, res, next) => {
