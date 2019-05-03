@@ -28,9 +28,12 @@ app.get('/about', (req, res) => {
 app.get('/projects/:id', (req, res) => {
   const {id} = req.params;
   const project = projects[id];
+  //If a character/string or a number larger than the amount of projects is entered
   if (isNaN(id) || id > projects.length) {
-    return res.redirect('/project');
+    //Then redirect to main page
+    return res.redirect('/');
   }
+  //Otherwise show the selected project
   res.render('project', { project });
 });
 
